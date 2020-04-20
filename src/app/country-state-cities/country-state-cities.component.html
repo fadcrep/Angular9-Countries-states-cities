@@ -1,0 +1,26 @@
+<div class="col-sm-4 col-12">
+    <div class="form-group">
+        <label>Select a country</label>
+        <select class="form-control" (change)="onChangeCountry($event.target.value)">
+            <option *ngFor=" let country of countriesList; let i = index" value={{i}}>{{country.CountryName}}</option>
+        </select>
+    </div>
+
+
+    <div class="form-group">
+        <label>Select a State</label>
+        <select class="form-control" (change)="onChangeState($event.target.value)">
+            <option *ngIf="statesList == null " value="-1"> Select state</option>
+            <option *ngFor=" let state of statesList; let j = index" value={{j}}>{{state.StateName}}</option>
+        </select>
+    </div>
+
+
+    <div class="form-group">
+        <label>Select a City</label>
+        <select class="form-control">
+            <option *ngIf=" citiesList == null " value=" -1"> Select city</option>
+            <option *ngFor=" let city of citiesList; let h = index" value={{h}}>{{city}}</option>
+        </select>
+    </div>
+</div>
